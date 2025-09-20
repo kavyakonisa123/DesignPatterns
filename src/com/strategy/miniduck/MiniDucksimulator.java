@@ -1,4 +1,4 @@
-package com.example.miniduck;
+package com.strategy.miniduck;
 
 public class MiniDucksimulator {
 
