@@ -1,5 +1,7 @@
 package com.decorator.coffee;
 
+import com.decorator.coffee.Beverage.Size;
+
 public class Whip extends CondimentDecorator{
 	
 	public Whip(Beverage beverage) {
@@ -13,7 +15,19 @@ public class Whip extends CondimentDecorator{
 
 	@Override
 	public double cost() {
-		return beverage.cost() + .10;
+double cost = beverage.cost() +.10;
+		
+		if(beverage.getSize() == Size.TALL) {
+			cost += .10;
+		}
+		else if(beverage.getSize() == Size.GRANDE) {
+			cost += .20;
+		}
+		else if(beverage.getSize() == Size.VENTI) {
+			cost += .30;
+		}
+		
+		return cost;
 	}
 
 }
