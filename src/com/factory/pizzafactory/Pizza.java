@@ -2,33 +2,29 @@ package com.factory.pizzafactory;
 
 import java.util.*;
 
+import com.factory.pizzaIngredientFactory.*;
+
 public abstract class Pizza {
 	String name;
-	String dough;
-	String sauce;
-	List<String> toppings= new ArrayList<String>();
-	public void prepare() {
-		System.out.println("preparing..."+ name);
-		System.out.println("Tossing dough..." + dough);
-		System.out.println("Adding sauce..."+ sauce);
-		System.out.println("Adding Toppings..");
-		for(String topping: toppings) {
-			System.out.println("Added "+ topping);
-		}
+	Dough dough;
+	Sauce sauce;
+	Cheese cheese;
+	Pepporoni pepporoni;
+	Clams clams;
+	Veggies veggies[];
+	
+	abstract void prepare();
+
+//	{
+//		System.out.println("preparing..."+ name);
+//		System.out.println("Tossing dough..." + dough);
+//		System.out.println("Adding sauce..."+ sauce);
+//		System.out.println("Adding Toppings..");
+//		for(String topping: toppings) {
+//			System.out.println("Added "+ topping);
+//		}
 		
-	}
-	public String getDough() {
-		return dough;
-	}
-	public void setDough(String dough) {
-		this.dough = dough;
-	}
-	public String getSauce() {
-		return sauce;
-	}
-	public void setSauce(String sauce) {
-		this.sauce = sauce;
-	}
+//	}
 	public void bake() {
 		System.out.println("bake for 20 min at 200");
 		
@@ -40,6 +36,7 @@ public abstract class Pizza {
 	public void box() {
 		System.out.println("WRAPPPING PIZZA in a offical Pizzastore Box");		
 	}
+	
 	public String getName() {
 		return name;
 	}

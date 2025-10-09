@@ -1,12 +1,22 @@
 package com.factory.pizzafactory;
 
-public class ChicagoStyleCheesePizza extends Pizza {
+import com.factory.pizzaIngredientFactory.PizzaIngredientFactory;
 
-	public ChicagoStyleCheesePizza() {
-		name="Chicago Style Sauce and Cheese Pizza";
-		dough="Thick Crust";
-		sauce="Alfredo sauce";
-		toppings.add("Grated PepperJack Cheese");
+public class CheesePizza extends Pizza {
+	PizzaIngredientFactory ingredientFactory;
+
+	public CheesePizza(PizzaIngredientFactory ingredientFactory) {
+		this.ingredientFactory= ingredientFactory;
+		
+	}
+
+
+	void prepare() {
+		System.out.println("Preparing.."+ name);
+		dough=ingredientFactory.createDough();
+		sauce=ingredientFactory.createSauce();
+		cheese= ingredientFactory.cretaecheese();
+		
 	}
 	
 

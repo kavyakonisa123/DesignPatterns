@@ -1,12 +1,23 @@
 package com.factory.pizzafactory;
 
-public class ChicagoStylePepporoniPizza extends Pizza {
+import com.factory.pizzaIngredientFactory.PizzaIngredientFactory;
 
-	public ChicagoStylePepporoniPizza() {
-		name="Chicago Style Sauce and Pepporoni Pizza";
-		dough="Thick Crust";
-		sauce="Alfredo sauce";
-		toppings.add("Grated Pepporoni");
+public class PepporoniPizza extends Pizza {
+
+	PizzaIngredientFactory ingredientFactory;
+
+	public PepporoniPizza(PizzaIngredientFactory ingredientFactory) {
+		this.ingredientFactory= ingredientFactory;
+		
+	}
+
+
+	void prepare() {
+		System.out.println("Preparibg.."+ name);
+		dough=ingredientFactory.createDough();
+		sauce=ingredientFactory.createSauce();
+		pepporoni= ingredientFactory.createPepporoni();
+		
 	}
 
 }

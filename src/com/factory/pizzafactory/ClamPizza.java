@@ -1,13 +1,25 @@
 package com.factory.pizzafactory;
 
-public class ChicagoStyleClamPizza extends Pizza {
+import com.factory.pizzaIngredientFactory.PizzaIngredientFactory;
 
-	public ChicagoStyleClamPizza() {
-		// TODO Auto-generated constructor stub
-		name="Chicago Style Sauce and Clam Pizza";
-		dough="Thick Crust";
-		sauce="Alfredo sauce";
-		toppings.add("Baked Clam");
+public class ClamPizza extends Pizza {
+
+
+	PizzaIngredientFactory ingredientFactory;
+
+	public ClamPizza(PizzaIngredientFactory ingredientFactory) {
+		this.ingredientFactory= ingredientFactory;
+		
 	}
+
+
+	void prepare() {
+		System.out.println("Preparibg.."+ name);
+		dough=ingredientFactory.createDough();
+		sauce=ingredientFactory.createSauce();
+		clams= ingredientFactory.createClams();
+		
+	}
+	
 
 }

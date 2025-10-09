@@ -1,16 +1,24 @@
 package com.factory.pizzafactory;
 
-public class ChicagoStyleVeggiePizza extends Pizza {
+import com.factory.pizzaIngredientFactory.PizzaIngredientFactory;
 
-	public ChicagoStyleVeggiePizza() {
-		// TODO Auto-generated constructor stub
-		name="Chicago Style Sauce and Veggie Pizza";
-		dough="Thick Crust";
-		sauce="Alfredo sauce";
-		toppings.add("Pineapple");
-		toppings.add("Onions");
-		toppings.add("Tomatoes");
+public class VeggiePizza extends Pizza {
+	
+	PizzaIngredientFactory ingredientFactory;
 
+	public VeggiePizza(PizzaIngredientFactory ingredientFactory) {
+		this.ingredientFactory= ingredientFactory;
+		
 	}
+
+
+	void prepare() {
+		System.out.println("Preparibg.."+ name);
+		dough=ingredientFactory.createDough();
+		sauce=ingredientFactory.createSauce();
+		veggies= ingredientFactory.createVeggies();
+		
+	}
+
 
 }
