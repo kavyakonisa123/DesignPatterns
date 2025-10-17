@@ -5,8 +5,9 @@ import com.factory.pizzaIngredientFactory.PizzaIngredientFactory;
 
 public class ChicagoStylePizza  extends PizzaStore{
 	 Pizza pizza;
-		
-	 protected Pizza createPizza(String type) {
+
+	 @Override
+	protected Pizza createPizza(String type) {
 		 Pizza pizza= null;
 		 PizzaIngredientFactory ingredientFactory = new ChicagoPizzaIngredientFactory();
 
@@ -30,13 +31,13 @@ public class ChicagoStylePizza  extends PizzaStore{
 				pizza= new VeggiePizza(ingredientFactory);
 				pizza.setName("Chicago Style Sauce and Veggie Pizza");
 
+		} else {
+			return null;
 		}
-		 else
-			 return null;
-		 
+
 		 return pizza;
-		
-	
+
+
 }
 
 }

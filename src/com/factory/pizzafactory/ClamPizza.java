@@ -9,17 +9,18 @@ public class ClamPizza extends Pizza {
 
 	public ClamPizza(PizzaIngredientFactory ingredientFactory) {
 		this.ingredientFactory= ingredientFactory;
-		
+
 	}
 
 
+	@Override
 	void prepare() {
 		System.out.println("Preparibg.."+ name);
 		dough=ingredientFactory.createDough();
 		sauce=ingredientFactory.createSauce();
 		clams= ingredientFactory.createClams();
-		
+
 	}
-	
+
 
 }

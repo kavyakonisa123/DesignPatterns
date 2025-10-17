@@ -6,6 +6,6 @@ public class MuteQueak implements QuackBehavior{
 	public void quack() {
 		System.out.println("...SILENCE...");
 	}
-	
+
 
 }

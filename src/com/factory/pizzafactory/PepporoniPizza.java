@@ -8,16 +8,17 @@ public class PepporoniPizza extends Pizza {
 
 	public PepporoniPizza(PizzaIngredientFactory ingredientFactory) {
 		this.ingredientFactory= ingredientFactory;
-		
+
 	}
 
 
+	@Override
 	void prepare() {
 		System.out.println("Preparibg.."+ name);
 		dough=ingredientFactory.createDough();
 		sauce=ingredientFactory.createSauce();
 		pepporoni= ingredientFactory.createPepporoni();
-		
+
 	}
 
 }

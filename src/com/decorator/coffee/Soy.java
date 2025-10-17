@@ -1,7 +1,7 @@
 package com.decorator.coffee;
 
 public class Soy extends CondimentDecorator{
-	
+
 	public Soy(Beverage beverage) {
 		this.beverage=beverage;
 	}
@@ -14,7 +14,7 @@ public class Soy extends CondimentDecorator{
 	@Override
 	public double cost() {
 		double cost = beverage.cost() +.15;
-		
+
 		if(beverage.getSize() == Size.TALL) {
 			cost += .10;
 		}
@@ -24,7 +24,7 @@ public class Soy extends CondimentDecorator{
 		else if(beverage.getSize() == Size.VENTI) {
 			cost += .30;
 		}
-		
+
 		return cost;
 	}
 

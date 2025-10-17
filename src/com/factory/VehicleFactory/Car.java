@@ -1,13 +1,15 @@
 package com.factory.VehicleFactory;
 
 public class Car implements Vehicle {
-	
-	    public void drive()
-	    { 
-	    	System.out.println("Driving a standard Car..."); 
+
+	    @Override
+		public void drive()
+	    {
+	    	System.out.println("Driving a standard Car...");
 	    }
-	    public String kind() 
-	    { 
+	    @Override
+		public String kind()
+	    {
 	    	return "Car";
 	    }
 }

@@ -1,5 +1,6 @@
 package com.abstractfactory.VehicleFactory;
 
 public class SlickTire implements Tire {
-    public String tread() { return "SlickTire: maximum grip on track"; }
+    @Override
+	public String tread() { return "SlickTire: maximum grip on track"; }
 }

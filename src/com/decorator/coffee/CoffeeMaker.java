@@ -6,7 +6,7 @@ public class CoffeeMaker {
 	public static void main(String args[]) {
 		Beverage beverage = new Espresso();
 		System.out.println(beverage.getSize() +" "+ beverage.getDescription() +" = $" +beverage.cost());
-		
+
 		Beverage beverage2 = new HouseBlend();
 		beverage2.setSize(Size.VENTI);
 		beverage2= new Milk(beverage2);
@@ -22,7 +22,7 @@ public class CoffeeMaker {
 		beverage3= new Whip(beverage3);
 		System.out.println(beverage3.getSize() +" "+ beverage3.getDescription() +" = $" +beverage3.cost());
 
-		
+
 
 
 	}

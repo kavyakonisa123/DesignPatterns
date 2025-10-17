@@ -9,7 +9,7 @@ public class TradingBot implements Observer {
         market.registerObserver(this);
 
     }
-    
+
     @Override
     public void update(String symbol) {
         double price = market.getPrice(symbol).orElse(Double.NaN);

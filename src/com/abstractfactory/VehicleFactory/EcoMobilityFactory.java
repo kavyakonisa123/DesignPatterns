@@ -10,14 +10,14 @@ public class EcoMobilityFactory implements MobilityFactory {
             default:    throw new IllegalArgumentException("Unknown type");
         }
     }
-    @Override 
-    public Engine createEngine() 
-    { 
-    	return new ElectricEngine(); 
+    @Override
+    public Engine createEngine()
+    {
+    	return new ElectricEngine();
     }
-    @Override 
-    public Tire   createTire()   
-    { 
-    	return new RoadTire(); 
+    @Override
+    public Tire   createTire()
+    {
+    	return new RoadTire();
     }
 }

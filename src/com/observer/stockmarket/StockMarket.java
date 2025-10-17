@@ -1,13 +1,18 @@
 package com.observer.stockmarket;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.OptionalDouble;
 public class StockMarket implements Subject {
     private final Map<String, Double> prices = new HashMap<>();
     private final List<Observer> observers = new ArrayList<>();
     @Override
     public void registerObserver(Observer o) {
-        if (o != null && !observers.contains(o))
-            observers.add(o);
+        if (o != null && !observers.contains(o)) {
+			observers.add(o);
+		}
     }
     @Override
     public void removeObserver(Observer o) {

@@ -17,25 +17,25 @@ public class ChocolateFactory {
 		System.out.println("============================");
 		System.out.println("Using ENUM");
 
-		
+
 		ChocolateInstance boiler1= ChocolateInstance.UNIQUE_INSTANCE;
 		ChocolateInstance boiler2= ChocolateInstance.UNIQUE_INSTANCE;
 		System.out.println(boiler1);
 		System.out.println(boiler2);
-		
+
 		boiler1.fill();
 		boiler2.fill();
 		boiler1.boil();
 		boiler2.boil();
 		boiler1.drain();
-		
-		boiler2.drain();
-		
 
-		
-		
-		
-		
+		boiler2.drain();
+
+
+
+
+
+
 	}
 
 }

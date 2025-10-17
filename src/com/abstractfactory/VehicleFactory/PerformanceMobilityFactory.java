@@ -10,14 +10,14 @@ public class PerformanceMobilityFactory implements MobilityFactory {
             default:    throw new IllegalArgumentException("Unknown type");
         }
     }
-    @Override 
+    @Override
     public Engine createEngine()
-    { 
+    {
     	return new SportEngine();
     }
-    @Override 
-    public Tire createTire()  
-    { 
-    	return new SlickTire(); 
+    @Override
+    public Tire createTire()
+    {
+    	return new SlickTire();
     }
 }
