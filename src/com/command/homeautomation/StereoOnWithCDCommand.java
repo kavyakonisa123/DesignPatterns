@@ -13,4 +13,10 @@ public class StereoOnWithCDCommand implements Command {
 		stereo.volume(10);
 	}
 
+	@Override
+	public void undo() {
+		stereo.off();
+		
+	}
+
 }

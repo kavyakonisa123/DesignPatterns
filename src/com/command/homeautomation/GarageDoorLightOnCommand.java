@@ -1,16 +1,16 @@
 package com.command.homeautomation;
 
-public class GarageDoorDownCommand implements Command {
+public class GarageDoorLightOnCommand implements Command {
 	GarageDoor garageDoor;
 	int prevStatus;
 	
-	public GarageDoorDownCommand(GarageDoor garageDoor) {
+	public GarageDoorLightOnCommand(GarageDoor garageDoor) {
 		this.garageDoor=garageDoor;
 	}
 
 	public void execute() {
 		prevStatus= garageDoor.getStatus();
-		garageDoor.down();
+		garageDoor.lightOn();
 	}
 
 	@Override
@@ -22,5 +22,4 @@ public class GarageDoorDownCommand implements Command {
 		else if(prevStatus == GarageDoor.STOP) garageDoor.stop();
 		
 	}
-
 }
