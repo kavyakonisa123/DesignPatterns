@@ -17,27 +17,28 @@ public class RemoteControl {
 		}
 		undoCommand= noCommand;
 	}
-	
+
 	public void setCommand(int slot, Command onCommand, Command offCommand) {
 		onCommands[slot] = onCommand;
 		offCommands[slot] =offCommand;
 	}
-	
+
 	public void onButtonWasPushed(int slot) {
 		onCommands[slot].execute();
 		undoCommand= onCommands[slot];
 	}
-	
+
 	public void offButtonWasPushed(int slot) {
 		offCommands[slot].execute();
 		undoCommand= offCommands[slot];
 
 	}
-	
+
 	public void undoButtonWasPushed() {
 		undoCommand.undo();
 	}
 
+	@Override
 	public String toString() {
 		StringBuffer stringBuff= new StringBuffer();
 		stringBuff.append("\n ---------Remote Control----\n");
@@ -47,8 +48,8 @@ public class RemoteControl {
 		stringBuff.append("undo " + undoCommand);
 		return stringBuff.toString();
 	}
-	
-	
-	
-	
+
+
+
+
 }

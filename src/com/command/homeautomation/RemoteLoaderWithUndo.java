@@ -1,7 +1,7 @@
 package com.command.homeautomation;
 
 public class RemoteLoaderWithUndo {
-	
+
 		public static void main(String[] args) {
 			RemoteControl remoteControl = new RemoteControl();
 			Light livingRoomLight = new Light("Living Room");
@@ -26,58 +26,58 @@ public class RemoteLoaderWithUndo {
 
 			StereoOnWithCDCommand stereoOnWithCD = new StereoOnWithCDCommand(stereo);
 			StereoOffCommand stereoOff = new StereoOffCommand(stereo);
-		
+
 			remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
 			remoteControl.setCommand(1, kitchenRoomLightOn, kitchenRoomLightOff);
 			remoteControl.setCommand(2, garageDoorUp, garageDoorDown);
 			remoteControl.setCommand(3, stereoOnWithCD, stereoOff);
-			
+
 			remoteControl.setCommand(4, ceilingFanOn, ceilingFanOff);
 			remoteControl.setCommand(5, ceilingFanMedium, ceilingFanOff);
 			remoteControl.setCommand(6, ceilingFanLow, ceilingFanOff);
 
-		
-			
+
+
 			remoteControl.onButtonWasPushed(0);
 			remoteControl.offButtonWasPushed(0);
 			System.out.println(remoteControl);
 			remoteControl.undoButtonWasPushed();
-			
-			
+
+
 			remoteControl.onButtonWasPushed(1);
 			remoteControl.offButtonWasPushed(1);
 			System.out.println(remoteControl);
 			remoteControl.undoButtonWasPushed();
-			
+
 			remoteControl.offButtonWasPushed(1);
 			System.out.println(remoteControl);
 			remoteControl.undoButtonWasPushed();
 			System.out.println("--------ceiling Fan 1-------------------");
 
-			
+
 			remoteControl.onButtonWasPushed(4);
 			remoteControl.offButtonWasPushed(4);
 			System.out.println(remoteControl);
 			remoteControl.undoButtonWasPushed();
-			
+
 			System.out.println("--------ceiling Fan 2-------------------");
 
 			remoteControl.onButtonWasPushed(5);
 			remoteControl.offButtonWasPushed(5);
 			System.out.println(remoteControl);
 			remoteControl.undoButtonWasPushed();
-			
+
 			System.out.println("--------ceiling Fan3-------------------");
 
 			remoteControl.onButtonWasPushed(6);
 			System.out.println(remoteControl);
 			remoteControl.undoButtonWasPushed();
-			
 
-			
-			
+
+
+
 		}
 
-	
+
 
 }

@@ -24,19 +24,19 @@ public class RemoteLoader {
 
 		StereoOnWithCDCommand stereoOnWithCD = new StereoOnWithCDCommand(stereo);
 		StereoOffCommand stereoOff = new StereoOffCommand(stereo);
-	
+
 		remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
 		remoteControl.setCommand(1, kitchenRoomLightOn, kitchenRoomLightOff);
 		remoteControl.setCommand(2, garageDoorUp, garageDoorDown);
 		remoteControl.setCommand(3, stereoOnWithCD, stereoOff);
-		
+
 //		remoteControl.setCommand(0, () -> livingRoomLight.on(), () -> livingRoomLight.off());
 //		remoteControl.setCommand(1, () -> kitchenRoomLight.on(), () -> kitchenRoomLight.off());
 //		remoteControl.setCommand(2, () -> garageDoor.up(), () -> garageDoor.down());
 //		remoteControl.setCommand(3, () -> stereo.on(), () -> stereo.off());
-//		
+//
 		System.out.println(remoteControl);
-		
+
 		remoteControl.onButtonWasPushed(0);
 		remoteControl.offButtonWasPushed(0);
 		remoteControl.onButtonWasPushed(1);

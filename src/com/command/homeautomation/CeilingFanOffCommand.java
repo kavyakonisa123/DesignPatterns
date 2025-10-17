@@ -3,11 +3,12 @@ package com.command.homeautomation;
 public class CeilingFanOffCommand implements Command {
 	CeilingFan ceilingFan;
 	int prevSpeed;
-	
+
 	public CeilingFanOffCommand(CeilingFan ceilingFan) {
 		this.ceilingFan=ceilingFan;
 	}
 
+	@Override
 	public void execute() {
 		prevSpeed= ceilingFan.getSpeed();
 		ceilingFan.off();
@@ -15,11 +16,16 @@ public class CeilingFanOffCommand implements Command {
 
 	@Override
 	public void undo() {
-		if(prevSpeed == CeilingFan.HIGH) ceilingFan.high();
-		else if(prevSpeed == CeilingFan.LOW) ceilingFan.low();
-		else if(prevSpeed == CeilingFan.OFF) ceilingFan.off();
-		else if(prevSpeed == CeilingFan.MEDIUM) ceilingFan.medium();
-		
+		if(prevSpeed == CeilingFan.HIGH) {
+			ceilingFan.high();
+		} else if(prevSpeed == CeilingFan.LOW) {
+			ceilingFan.low();
+		} else if(prevSpeed == CeilingFan.OFF) {
+			ceilingFan.off();
+		} else if(prevSpeed == CeilingFan.MEDIUM) {
+			ceilingFan.medium();
+		}
+
 	}
-	
+
 }

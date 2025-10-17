@@ -1,7 +1,7 @@
 package com.command.homeautomation;
 
 public class RemoteLoaderMacro {
-	
+
 	public static void main(String[] args) {
 		RemoteControl remoteControl = new RemoteControl();
 		Light livingRoomLight = new Light("Living Room");
@@ -13,18 +13,18 @@ public class RemoteLoaderMacro {
 
 		StereoOnWithCDCommand stereoOnWithCD = new StereoOnWithCDCommand(stereo);
 		StereoOffCommand stereoOff = new StereoOffCommand(stereo);
-		
+
 		TelevisionOnCommand televisionOn = new TelevisionOnCommand(television);
 		TelevisionOffCommand televisionOff = new TelevisionOffCommand(television);
-		
+
 		Command[] partyOn = {livingRoomLightOn,stereoOnWithCD,televisionOn};
 		Command[] partyOff = {livingRoomLightOff,stereoOff ,televisionOff};
-		
+
 		MacroCommand partyOnMacro = new MacroCommand(partyOn);
 		MacroCommand partyOffMacro = new MacroCommand(partyOff);
-		
+
 		remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
-		
+
 		System.out.println(remoteControl);
 		System.out.println("Pushing Macro On------------");
 
@@ -36,7 +36,7 @@ public class RemoteLoaderMacro {
 		remoteControl.undoButtonWasPushed();
 
 
-		
+
 
 
 }

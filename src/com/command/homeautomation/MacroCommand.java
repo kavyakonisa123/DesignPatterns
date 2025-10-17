@@ -1,23 +1,25 @@
 package com.command.homeautomation;
 
 public class MacroCommand implements Command{
-	
+
 	Command[] commands;
-	
+
 	public MacroCommand(Command[] commands) {
 		this.commands= commands;
 	}
 
+	@Override
 	public void execute() {
-		for(int i=0; i< commands.length ; i++) {
-			commands[i].execute();
+		for (Command command : commands) {
+			command.execute();
 		}
 	}
 
+	@Override
 	public void undo() {
-		for(int i=0; i< commands.length ; i++) {
-			commands[i].undo();
-		}		
+		for (Command command : commands) {
+			command.undo();
+		}
 	}
 
 }

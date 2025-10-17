@@ -21,7 +21,7 @@ public class Stereo {
 		status = OFF;
 		System.out.println("Stereo is OFF");
 	}
-	
+
 	public void setCd() {
 		System.out.println("Stereo is set for CD input");
 	}
@@ -31,8 +31,8 @@ public class Stereo {
 	public void volume(int volume) {
 		System.out.println("Stereo is set for volume at "+volume);
 	}
-	
-	
+
+
 
 
 

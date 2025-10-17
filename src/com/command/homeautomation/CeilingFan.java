@@ -7,7 +7,7 @@ public class CeilingFan {
 	public static final int LOW = 1;
 	public static final int MEDIUM = 2;
 	public static final int HIGH = 3;
-	
+
 	public CeilingFan(String location) {
 		this.location = location;
 		speed = OFF;
@@ -17,7 +17,7 @@ public class CeilingFan {
 		speed = HIGH;
 		System.out.println("Turned up high at "+location);
 	}
-	
+
 	public void medium() {
 		speed = MEDIUM;
 		System.out.println("Turned up medium at "+location);

@@ -1,7 +1,7 @@
 package com.command.homeautomation;
 
 public class GarageDoor {
-	
+
 	String location;
 	int status;
 	public static final int ON = 1;
@@ -20,7 +20,7 @@ public class GarageDoor {
 		status = UP;
 		System.out.println("Garage is UP");
 	}
-	
+
 	public void down() {
 		status = UP;
 		System.out.println("Garage is UP");
@@ -40,7 +40,7 @@ public class GarageDoor {
 		System.out.println("Stopped");
 
 	}
-	
+
 	public int getStatus() {
 		return status;
 	}

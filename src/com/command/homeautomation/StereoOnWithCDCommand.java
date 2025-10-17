@@ -2,11 +2,12 @@ package com.command.homeautomation;
 
 public class StereoOnWithCDCommand implements Command {
 	Stereo stereo;
-	
+
 	public StereoOnWithCDCommand(Stereo stereo) {
 		this.stereo=stereo;
 	}
 
+	@Override
 	public void execute() {
 		stereo.on();
 		stereo.setCd();
@@ -16,7 +17,7 @@ public class StereoOnWithCDCommand implements Command {
 	@Override
 	public void undo() {
 		stereo.off();
-		
+
 	}
 
 }
