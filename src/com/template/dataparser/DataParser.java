@@ -6,8 +6,11 @@ public abstract class DataParser {
 	    public final void processFile(String fileName) {
 	        readData(fileName);
 	        parseData();
-	        validateData();
+	        if (shouldValidate()) { // Hook usage
+	            validateData();
+	        }
 	        writeData();
+	        postProcessingHook(); // Another hook
 	    }
 
 	    // Common steps
@@ -22,5 +25,14 @@ public abstract class DataParser {
 	    // Steps that differ for each parser
 	    abstract void parseData();
 	    abstract void validateData();
+	    
+	    // --- Hooks ---
+	    protected boolean shouldValidate() {
+	        return true;  // by default, we validate
+	    }
+
+	    protected void postProcessingHook() {
+	        // Default empty hook
+	    }
 	}
 

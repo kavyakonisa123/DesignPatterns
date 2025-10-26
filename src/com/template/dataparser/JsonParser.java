@@ -9,5 +9,6 @@ public class JsonParser extends DataParser {
     void validateData() {
         System.out.println("Validating JSON schema");
     }
+ // Using default hook behavior - no override
 }
 
