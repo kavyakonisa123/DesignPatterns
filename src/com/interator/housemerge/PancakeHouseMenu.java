@@ -88,9 +88,13 @@ public class PancakeHouseMenu {
 		
 	}
 
-	public List<MenuItem> getMenuItems() {
-		return menuItems;
+//	public List<MenuItem> getMenuItems() {
+//		return menuItems;
+//	}
+	public Iterator createIterator() {
+		return new PancakeHouseMenuIterator(menuItems);
 	}
+
 
 	public void setMenuItems(List<MenuItem> menuItems) {
 		this.menuItems = menuItems;

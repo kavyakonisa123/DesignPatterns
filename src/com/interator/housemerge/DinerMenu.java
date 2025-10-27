@@ -31,13 +31,17 @@ public class DinerMenu {
 		
 		
 	}
-
-	public MenuItem[] getMenuItems() {
-		return menuItems;
-	}
+//
+//	public MenuItem[] getMenuItems() {
+//		return menuItems;
+//	}
 
 	public void setMenuItems(MenuItem[] menuItems) {
 		this.menuItems = menuItems;
+	}
+	
+	public Iterator createIterator() {
+		return new DinerMenuIterator(menuItems);
 	}
 	
 	
