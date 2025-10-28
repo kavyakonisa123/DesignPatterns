@@ -23,4 +23,8 @@ public class PancakeHouseMenuIterator implements Iterator{
 		return menuItem;
 	}
 
+	public void remove() {
+		throw new UnsupportedOperationException("You shouldn't be trying to remove the operation");
+	}
+
 }

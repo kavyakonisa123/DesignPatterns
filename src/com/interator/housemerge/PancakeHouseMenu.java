@@ -2,9 +2,9 @@ package com.interator.housemerge;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Iterator;
 
-
-public class PancakeHouseMenu {
+public class PancakeHouseMenu implements Menu {
 	List<MenuItem> menuItems;
 
 	public PancakeHouseMenu() {
@@ -91,8 +91,10 @@ public class PancakeHouseMenu {
 //	public List<MenuItem> getMenuItems() {
 //		return menuItems;
 //	}
-	public Iterator createIterator() {
-		return new PancakeHouseMenuIterator(menuItems);
+	public Iterator<MenuItem> createIterator() {
+//		return new PancakeHouseMenuIterator(menuItems);
+		return menuItems.iterator();
+
 	}
 
 

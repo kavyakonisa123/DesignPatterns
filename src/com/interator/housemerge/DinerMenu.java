@@ -1,6 +1,8 @@
 package com.interator.housemerge;
 
-public class DinerMenu {
+import java.util.Iterator;
+
+public class DinerMenu implements Menu{
 	public final int MAX_ITEMS = 5;
 	int noOfItems=0;
 	MenuItem[] menuItems;
@@ -40,8 +42,9 @@ public class DinerMenu {
 		this.menuItems = menuItems;
 	}
 	
-	public Iterator createIterator() {
+	public Iterator<MenuItem> createIterator() {
 		return new DinerMenuIterator(menuItems);
+//		return menuItems.iterator();
 	}
 	
 	
