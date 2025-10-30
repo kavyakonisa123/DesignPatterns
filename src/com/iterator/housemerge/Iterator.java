@@ -1,4 +1,4 @@
-package com.interator.housemerge;
+package com.iterator.housemerge;
 
 public interface Iterator {
 	boolean hasNext();

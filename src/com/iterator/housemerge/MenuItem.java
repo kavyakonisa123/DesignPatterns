@@ -1,4 +1,4 @@
-package com.interator.housemerge;
+package com.iterator.housemerge;
 
 public class MenuItem {
 	String name;

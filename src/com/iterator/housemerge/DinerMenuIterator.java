@@ -1,16 +1,14 @@
-package com.interator.housemerge;
+package com.iterator.housemerge;
 
-import java.util.Calendar;
 import java.util.Iterator;
 
-public class AlternatingDinnerMenuIterator implements Iterator<MenuItem>{
+public class DinerMenuIterator implements Iterator<MenuItem>{
 	MenuItem[] items;
 	int position = 0;
 
 
-	public AlternatingDinnerMenuIterator(MenuItem[] items) {
+	public DinerMenuIterator(MenuItem[] items) {
 		this.items = items;
-		this.position = Calendar.DAY_OF_WEEK %2;
 	}
 	
 	public boolean hasNext() {
@@ -21,7 +19,7 @@ public class AlternatingDinnerMenuIterator implements Iterator<MenuItem>{
 
 	public MenuItem next() {
 		MenuItem menuItem = items[position];
-		position= position+2;
+		position= position+1;
 		return menuItem;
 	}
 	

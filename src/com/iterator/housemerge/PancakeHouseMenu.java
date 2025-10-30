@@ -1,4 +1,4 @@
-package com.interator.housemerge;
+package com.iterator.housemerge;
 
 import java.util.List;
 import java.util.ArrayList;
