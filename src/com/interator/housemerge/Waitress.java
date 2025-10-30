@@ -1,6 +1,7 @@
 package com.interator.housemerge;
 
 import java.util.Iterator;
+import java.util.List;
 
 public class Waitress {
 //	public static void main(String args[]) {
@@ -31,25 +32,50 @@ public class Waitress {
 //		}
 		// After adding Iterator
 		
-		Menu pancakeHouseMenu;
-		Menu dinerMenu;
+//		Menu pancakeHouseMenu;
+//		Menu dinerMenu;
+//		Menu cafeMenu;
+		List<Menu> menus;
 		 
 
-		public Waitress(Menu pancakeHouseMenu, Menu dinerMenu) {
-			this.pancakeHouseMenu = pancakeHouseMenu;
-			this.dinerMenu = dinerMenu;
+//		public Waitress(Menu pancakeHouseMenu, Menu dinerMenu, Menu cafeMenu) {
+//			this.pancakeHouseMenu = pancakeHouseMenu;
+//			this.dinerMenu = dinerMenu;
+//			this.cafeMenu = cafeMenu;
+//		}
+		
+//		public void printMenu() {
+//			Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
+//			Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
+//			Iterator<MenuItem> cafeIterator = cafeMenu.createIterator();
+//
+//			System.out.println("\n Breakfast.......................");
+//			printMenu(pancakeIterator);
+//			System.out.println("\n Lunch.......................");
+//			printMenu(dinerIterator);
+//			System.out.println("\n Dinner.......................");
+//			printMenu(cafeIterator);
+//
+//		}
+		
+		public Waitress(List<Menu> menus) {
+			this.menus= menus;
 		}
 		
 		public void printMenu() {
-			Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
-			Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
-			System.out.println("\n Breakfast.......................");
-			printMenu(pancakeIterator);
-			System.out.println("\n Lunch.......................");
-			printMenu(dinerIterator);
+			Iterator<Menu> menuIterator = menus.iterator();
+			
+			while(menuIterator.hasNext()) {
+				Menu menu= menuIterator.next();
+				System.out.println("\n Displaying......................."+menu.getClass());
+				
+				printMenu(menu.createIterator());
+			}
 
 
 		}
+		
+		
 		
 		private void printMenu(Iterator<MenuItem> iterator) {
 			while(iterator.hasNext()) {
