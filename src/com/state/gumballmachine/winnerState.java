@@ -1,12 +1,13 @@
 package com.state.gumballmachine;
 
-public class SoldState implements State {
-	GumballStateMachine gumballStateMachine;
+public class winnerState implements State{
 
-	public SoldState(GumballStateMachine gumballStateMachine) {
+	
+	GumballStateMachine gumballStateMachine;
+	
+	public winnerState(GumballStateMachine gumballStateMachine) {
 		this.gumballStateMachine= gumballStateMachine;
 	}
-	
 
 	@Override
 	public void insertQuarter() {
@@ -28,17 +29,26 @@ public class SoldState implements State {
 
 	}
 
+
 	@Override
 	public void dispense() {
 		gumballStateMachine.releaseBall();
-		if(gumballStateMachine.getCount()>0) {
-			gumballStateMachine.setState(gumballStateMachine.getNoQuarterState());
-		}
-		else {
-			System.out.println("Sorry we are out of gumballs");
+		if(gumballStateMachine.getCount() == 0) {
 			gumballStateMachine.setState(gumballStateMachine.getSoldOutState());
 		}
+		else {
+			gumballStateMachine.releaseBall();
+			System.out.println("----------------You are a Winner! You got two gumbells for your quarter..");
+			if(gumballStateMachine.getCount() > 0) {
+				gumballStateMachine.setState(gumballStateMachine.getNoQuarterState());
+			}
+			else {
+				System.out.println("Out of Gumballs.. sorry..");
+			gumballStateMachine.setState(gumballStateMachine.getSoldOutState());
+		}
+		}
 
+		
 	}
 	
 	public void refill() {

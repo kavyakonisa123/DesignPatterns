@@ -27,12 +27,29 @@ public class GumballMachineDispenser {
 		
 		
 		
+		
+		
 		System.out.println("............"+gumballMachine.toString());
 		gumballMachine.insertQuarter();
 		gumballMachine.turnCrank();
 		gumballMachine.insertQuarter();
+		System.out.println("............"+gumballMachine.toString());
 
 
+		gumballMachine.refill(5);
+		
+		System.out.println("............"+gumballMachine.toString());
+		gumballMachine.insertQuarter();
+		gumballMachine.turnCrank();
+		gumballMachine.ejectQuarter();
+		
+		System.out.println("............"+gumballMachine.toString());
+		gumballMachine.insertQuarter();
+		gumballMachine.insertQuarter();
+		gumballMachine.turnCrank();
+		gumballMachine.ejectQuarter();
+		gumballMachine.insertQuarter();
+		gumballMachine.turnCrank();
 		
 
 		

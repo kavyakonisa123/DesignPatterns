@@ -27,5 +27,9 @@ public class NoQuarterState implements State{
 		System.out.println("You haven't inserted a quarter.. Pay to start");
 		
 	}
+	public void refill() {
+		System.out.println("Its not time for refill .. You can still play");
+	}
+
 
 }

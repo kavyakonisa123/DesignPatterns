@@ -1,8 +1,11 @@
 package com.state.gumballmachine;
 
+import java.util.Random;
+
 public class HasQuarterState implements State {
 
 	GumballStateMachine gumballStateMachine;
+	Random randomWinner = new Random(System.currentTimeMillis());
 
 	public HasQuarterState(GumballStateMachine gumballStateMachine) {
 		this.gumballStateMachine = gumballStateMachine;
@@ -24,7 +27,12 @@ public class HasQuarterState implements State {
 	@Override
 	public void turnCrack() {
 		System.out.println("You turned the crack");
-		gumballStateMachine.setState(gumballStateMachine.getSoldState());
+		int winner= randomWinner.nextInt(10);
+		if((winner==0 ) && gumballStateMachine.count >1){
+			gumballStateMachine.setState(gumballStateMachine.getWinnerState());
+
+		}else {
+		gumballStateMachine.setState(gumballStateMachine.getSoldState());}
 	}
 
 	@Override
@@ -33,6 +41,9 @@ public class HasQuarterState implements State {
 		
 
 
+	}
+	public void refill() {
+		System.out.println("Its not time for refill .. You can still play");
 	}
 
 }
