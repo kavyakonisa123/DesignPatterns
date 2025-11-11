@@ -1,5 +1,7 @@
 package com.proxy.gumballmachine;
 
+import java.rmi.Naming;
+
 public class GumballMachineDispenser {
 	public static void main(String[] args) {
 		int count=0;
@@ -7,11 +9,14 @@ public class GumballMachineDispenser {
 			System.out.println("GumballMachine <inventory> <name> ");	
 			System.exit(1);
 		}
+		try {
 		
 		count=Integer.parseInt(args[0]);
 		
 		GumballStateMachine gumballMachine= new GumballStateMachine(count, args[1]);
-		GumballMonitor gumballMonitor = new GumballMonitor(gumballMachine);
+		Naming.bind("rmi://127.0.0.1/" + args[1] + "/gumballmachine", gumballMachine);
+
+
 		System.out.println("............"+gumballMachine.toString());
 		gumballMachine.insertQuarter();
 		gumballMachine.turnCrank();
@@ -59,8 +64,16 @@ public class GumballMachineDispenser {
 		gumballMachine.insertQuarter();
 		gumballMachine.turnCrank();
 		
-		gumballMonitor.report();
+		}
+		catch(Exception ex) {
+			ex.printStackTrace();
+		}
 		
+
+//		
 	}
 
 }
+
+
+

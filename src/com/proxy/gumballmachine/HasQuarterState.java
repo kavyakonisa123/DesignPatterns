@@ -4,7 +4,8 @@ import java.util.Random;
 
 public class HasQuarterState implements State {
 
-	GumballStateMachine gumballStateMachine;
+	private static final long serialVersionUID = 2L;
+	transient GumballStateMachine gumballStateMachine;
 	Random randomWinner = new Random(System.currentTimeMillis());
 
 	public HasQuarterState(GumballStateMachine gumballStateMachine) {

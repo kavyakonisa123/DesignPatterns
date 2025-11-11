@@ -1,18 +1,26 @@
 package com.proxy.gumballmachine;
 
+import java.rmi.RemoteException;
+
 public class GumballMonitor {
 	
-	GumballStateMachine gumballStateMachine;
-	public GumballMonitor(GumballStateMachine gumballStateMachine) {
-		this.gumballStateMachine= gumballStateMachine;
+	GumballMachineRemote gumballMachineRemote;
+	public GumballMonitor(GumballMachineRemote gumballMachineRemote) {
+		this.gumballMachineRemote= gumballMachineRemote;
 	}
 
 	public void report() {
-		System.out.println("Current Location: " + gumballStateMachine.getLocation());
+		
+		try {
+			System.out.println("Current Location: " + gumballMachineRemote.getLocation());
+			System.out.println("Current Inventory: " + gumballMachineRemote.getCount() + " Inventory");
+			System.out.println("Current State: " + gumballMachineRemote.getState());
 
-		System.out.println("Current Inventory: " + gumballStateMachine.getCount() + " Inventory");
-		System.out.println("Current State: " + gumballStateMachine.getState());
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 
+		
 	}
 
 }
