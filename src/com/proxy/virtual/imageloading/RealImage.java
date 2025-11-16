@@ -1,0 +1,25 @@
+package com.proxy.virtual.imageloading;
+
+public class RealImage implements Image {
+
+    private String fileName;
+
+    public RealImage(String fileName) {
+        this.fileName = fileName;
+        loadFromDisk();
+    }
+
+    private void loadFromDisk() {
+        System.out.println("Loading image from disk: " + fileName);
+        try {
+            Thread.sleep(2000); // simulate heavy loading
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void display() {
+        System.out.println("Displaying: " + fileName);
+    }
+}
