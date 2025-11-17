@@ -5,16 +5,18 @@ public class DuckSimulator {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		DuckSimulator simulator = new DuckSimulator();
-		simulator.simulate();
+		AbstractDuckFactory  duckFactory = new CountingDuckFactory();
+		AbstractGooseFactory gooseFactory = new GooseFactory();
+		simulator.simulate(duckFactory,gooseFactory);
 
 	}
 
-	 void simulate() {
-		Quackable mallardDuck = new QuackCounter(new MallardDuck());
-		Quackable redheadDuck = new QuackCounter(new RedheadDuck());
-		Quackable duckCall = new QuackCounter(new DuckCall());
-		Quackable rubberDuck = new QuackCounter(new RubberDuck());
-		Quackable gooseAdapter = new GooseAdapter(new Goose());
+	 void simulate(AbstractDuckFactory  duckFactory,AbstractGooseFactory gooseFactory) {
+		Quackable mallardDuck = duckFactory.createMallardDuck();
+		Quackable redheadDuck = duckFactory.createRedheadDuck();
+		Quackable duckCall = duckFactory.createDuckCall();
+		Quackable rubberDuck = duckFactory.createRubberDuck();
+		Quackable gooseAdapter = gooseFactory.createGoose();
 
 		
 		System.out.println("\nDuck simulator");
