@@ -17,9 +17,7 @@ public class DuckSimulator {
 		Quackable rubberDuck = duckFactory.createRubberDuck();
 		Quackable gooseAdapter = gooseFactory.createGoose();
 
-		
-		System.out.println("\nDuck simulator : With composite - Flocks");
-		
+				
 		Flock flockOfDucks = new Flock();
 		flockOfDucks.add(redheadDuck);
 		flockOfDucks.add(duckCall);
@@ -38,9 +36,13 @@ public class DuckSimulator {
 		flockOfMallard.add(mallardDuckFour);
 		flockOfDucks.add(flockOfMallard);
 		
+		Quackologist quackologist = new Quackologist();
+		flockOfDucks.registerObserver(quackologist);
+		
+
 		System.out.println("\nDuck simulator : Whole Flock Simulation");
 		simulate(flockOfDucks);
-		
+
 		System.out.println("\nDuck simulator : Mallard Duck Flock Simulation");
 		simulate(flockOfMallard);
 		simulate(gooseAdapter);

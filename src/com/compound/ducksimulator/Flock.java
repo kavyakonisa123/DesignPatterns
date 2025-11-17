@@ -6,9 +6,10 @@ import java.util.List;
 
 public class Flock implements Quackable {
 	List<Quackable> quackers = new ArrayList<Quackable>();
+
 	
-	public void add(Quackable quacker) {
-		quackers.add(quacker);
+	public void add(Quackable duck) {
+		quackers.add(duck);
 		
 	}
 
@@ -18,8 +19,26 @@ public class Flock implements Quackable {
 		while(iterator.hasNext()) {
 			Quackable quacker = iterator.next();
 			quacker.quack();
+
+		}	
+	
+	}
+
+	@Override
+	public void registerObserver(Observer observer) {
+		Iterator<Quackable> iterator = quackers.iterator();
+		while(iterator.hasNext()) {
+			Quackable quacker = iterator.next();
+			quacker.registerObserver(observer);
 		}
+	}
+
+	@Override
+	public void notifyObservers() {
 		
 	}
 
 }
+
+
+
